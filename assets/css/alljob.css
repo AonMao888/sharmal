@@ -1,0 +1,689 @@
+:root{
+    --color: #333;
+    --back: #fff;
+}
+body{
+    margin: 0;
+    background: var(--back);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+nav{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 1px 2px 3px rgba(59, 59, 59, 0.166);
+    padding: 9px 0;
+    z-index: 1;
+    position: sticky;
+    background: var(--back);
+    scroll-behavior: smooth;
+    top: 0;
+}
+nav .left{
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+nav .left i{
+    font-size: 23px;
+    color: var(--color);
+    padding: 3px 8px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: 0.4s;
+}
+nav .left i:hover{color: royalblue;}
+nav .left a{
+    text-decoration: none;
+    font-size: 27px;
+    color: royalblue;
+    font-weight: bold;
+    margin: 3px;
+    white-space: nowrap;
+}
+.search{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--back);
+}
+form{
+    display: flex;
+    align-items: center;
+    border: 2px solid royalblue;
+    border-radius: 5px;
+    padding: 3px;
+    margin: 0 5px;
+    width: 100%;
+    max-width: 519px;
+}
+form input{
+    width: 100%;
+    margin-left: 9px;
+    font-size: 18px;
+    padding: 3px;
+    background: none;
+    border: none;
+    outline: none;
+}
+form .clear{
+    padding: 5px;
+    font-size: 21px;
+    color: red;
+    cursor: pointer;
+    margin: 0 4px;
+    display: none;
+}
+form button{
+    background: royalblue;
+    outline: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    min-width: 36px;
+    min-height: 36px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+.search a{
+    text-decoration: none;
+    color: red;
+    padding: 3px;
+    margin: 0;
+    margin-left: 2px;
+    margin-right: 7px;
+    font-size: 14px;
+    display: none;
+}
+.searchbtn{display: none;}
+nav .right{
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+nav .right a{
+    text-decoration: none;
+    color: var(--color);
+    font-size: 19px;
+    padding: 3px;
+    margin: 3px 9px;
+    transition: 0.4s;
+}
+nav .right a:hover{
+    color: royalblue;
+}
+nav .menubtn{display: none;}
+.body{
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+}
+.menu{
+    display: flex;
+    flex-direction: column;
+    border-right: 3px solid #eee;
+    min-width: 272px;
+}
+.menu h3{
+    margin: 5px;
+    font-size: 24px;
+    margin-left: 9px;
+    color: var(--color);
+}
+.menu span{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgb(255, 215, 215);
+    margin: 6px;
+    border-radius: 5px;
+    padding: 4px 8px;
+    cursor: pointer;
+    color: red;
+    border: 2px solid red;
+    display: none;
+}
+.menu a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 9px 0;
+    color: var(--color);
+    transition: 0.4s;
+}
+.menu a:hover{
+    background: #e4e4e492;
+}
+.menu a p{
+    margin: 5px;
+    font-size: 18px;
+    margin-left: 15px;
+}
+.menu a i{
+    font-size: 19px;
+    margin-right: 15px;
+}
+.home{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+}
+.b{
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+}
+.b p{
+    margin: 5px 9px;
+    color: var(--color);
+    font-size: 17px;
+}
+.b select{
+    background: var(--back);
+    color: var(--color);
+    border-radius: 3px;
+    font-size: 16px;
+    padding: 4px 5px;
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.item{
+    position: relative;
+    display: flex;
+    width: 91%;
+    padding: 7px;
+    max-height: 591px;
+    background: var(--back);
+    border: 1px solid rgba(105, 105, 105, 0.296);
+    margin: 15px 0;
+    transition: 0.3s;
+}
+.item:hover{
+    background: rgba(217, 217, 217, 0.337);
+    border-color: royalblue;
+    border-radius: 5px;
+}
+.preview{
+    display: flex;
+    width: 100%;
+    overflow: scroll;
+}
+.preview::-webkit-scrollbar{
+    background: white;
+    height: 8px;
+}
+.preview::-webkit-scrollbar-thumb{
+    background: royalblue;
+}
+.preview img{
+    height: 272px;
+    user-select: none;
+    object-fit: contain;
+    object-position: center;
+}
+.content{
+    min-width: 324px;
+}
+.content h1{
+    margin: 5px;
+    font-size: 29px;
+    margin-left: 9px;
+    color: var(--color);
+}
+.content p{
+    font-size: 18px;
+    color: var(--color);
+    margin: 5px 9px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.content .number{
+    position: absolute;
+    right: -9px;
+    top: -9px;
+    border-radius: 3px;
+    background: royalblue;
+    color: white;
+    padding: 4px 7px;
+    font-size: 17px;
+}
+.des{
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    margin-top: 19px;
+}
+.des p{
+    width: 100%;
+}
+.des a{
+    padding: 3px;
+    margin-right:5px;
+    font-size: 19px;
+    color: var(--color);
+    transition: 0.4s;
+}
+.des a:hover{color: royalblue;}
+.des button{
+    display: flex;
+    align-items: center;
+    margin-right: 7px;
+    background: royalblue;
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 7px 12px;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: 0.4s;
+    user-select: none;
+}
+.des button:hover{
+    background: blue;
+}
+.des button i{
+    margin-left: 5px;
+    font-size: 14px;
+}
+.box{
+    background: var(--back);
+    border: 1px solid rgba(105, 105, 105, 0.537);
+    margin: 12px auto;
+    border-radius: 4px;
+    padding: 5px 9px;
+    width: 88%;
+}
+.totop{
+    background: royalblue;
+    width: 63px;
+    height: 63px;
+    position: fixed;
+    right: 15px;
+    border-radius: 9px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    bottom: -369px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.4s;
+    transform: scale(1);
+}
+.totop:hover{
+    background: rgb(57, 16, 239);
+}
+.totop:active{transform: scale(0.91);}
+.totop i{
+    font-size: 19px;
+    margin: 0;
+}
+.totop p{
+    margin: 0;
+    font-size: 15px;
+}
+
+.div{
+    width: 98%;
+    margin: 12px auto;
+    height: 100%;
+}
+.div .slider{
+    display: flex;
+    overflow-x: scroll;
+    width: 100%;
+    margin-bottom: 9px;
+}
+.div .slider::-webkit-scrollbar{background: var(--back);height: 9px;}
+.div .slider::-webkit-scrollbar-thumb{background: royalblue;}
+.div .slider img{
+    height: 300px;
+    object-fit: contain;
+    object-position: center;
+    user-select: none;
+}
+.vdes{
+    display: flex;
+    align-items: flex-start;
+    overflow: hidden;
+    width: 100%;
+}
+.vdes .left{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.vdes .left h1{
+    margin: 3px;
+    margin-left: 15px;
+    font-size: 29px;
+    color: var(--color);
+}
+.vdes .left p{
+    word-wrap: break-word;
+    word-break: break-all;
+    margin: 3px;
+    font-size: 18px;
+    margin-left: 12px;
+    color: var(--color);
+}
+.vdes .right{
+    min-width: 315px;
+    width: 315px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid dimgray;
+    border-radius: 9px;
+    margin: 3px;
+    padding: 3px;
+    margin-left: 9px;
+}
+.vdes .right h1{
+    margin: 5px;
+    font-size: 27px;
+    color: royalblue;
+}
+.vdes .right h1 a{text-decoration: none;color: royalblue;}
+.vdes .right p{
+    margin: 5px;
+    color: var(--color);
+    font-size: 17px;
+    word-break: break-all;
+}
+.vdes .right p i{
+    font-size: 17px;
+    margin-right: 7px;
+}
+.vdes .callbtn{
+    text-decoration: none;
+    background: royalblue;
+    color: white;
+    width: 98%;
+    outline: none;border: none;
+    margin: 5px auto;
+    border-radius: 5px;
+    padding: 9px 0;
+    transition: 0.4s;
+    cursor: pointer;
+    user-select: none;
+    font-size: 19px;
+}
+.vdes .callbtn:hover{
+    background: rgb(65, 65, 225);
+}
+.vdes .callbtn i{
+    font-size: 18px;
+    margin-right: 8px;
+}
+.vlink{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px 7px;
+}
+.vlink a{
+    text-decoration: none;
+    border: 2px solid royalblue;
+    border-radius: 50px;
+    padding: 5px 10px;
+    user-select: none;
+    font-size: 17px;
+    color: royalblue;
+    transition: 0.4s;
+}
+.vlink a:hover{
+    background: royalblue;
+    color: white;
+}
+.li{
+    display: flex;
+    width: 99%;
+    margin: 9px auto;
+    background: var(--back);
+    margin-bottom: 36px;
+}
+.i{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: #000;
+}
+.i p{
+    color: #000;
+}
+.i:nth-child(1){
+    background: #17D7A0;
+}
+.i:nth-child(2){
+    background: #FFFB73;
+}
+.i:nth-child(3){
+    background: #8EACCD;
+}
+.i:nth-child(4){
+    background: #B0578D;
+}
+.i:nth-child(5){
+    background: #D83F31;
+}
+.i h4{
+    margin: 0;
+}
+.i h4:nth-child(1){
+    margin-top: 5px;
+    margin-left: 7px;
+    font-size: 17px;
+}
+.i h4:nth-child(2){
+    margin: 7px;
+    margin-top: 3px;
+    font-size: 21px;
+}
+.foot{
+    display: flex;
+    align-items: center;
+    background: #333;
+    padding: 19px 0;
+    margin-top: 51px;
+}
+.foot a{
+    color: white;
+    font-size: 18px;
+    margin-left: 24px;
+}
+.pop{
+    position: fixed;
+    background: var(--back);
+    left: 0;
+    top: 100vh;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s;
+}
+.pop h1{
+    margin: 9px;
+    font-size: 36px;
+    color: var(--color);
+    text-align: center;
+}
+.pop h1 span{
+    color: purple;
+    font-size: 19px;
+    margin: 0;
+}
+.pop img{
+    width: 159px;
+    height: 159px;
+    object-fit: contain;
+    object-position: center;
+    border: 5px solid #eee;
+    margin: 19px 5px;
+    user-select: none;
+}
+.popbtn{
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+.popbtn a{
+    text-decoration: none;
+    margin: 5px;
+    padding: 9px 17px;
+    border-radius: 4px;
+    color: white;
+    font-size: 19px;
+}
+.popbtn a i{
+    margin-right: 5px;
+    font-size: 18px;
+}
+.popbtn a:nth-child(1){
+    background: green;
+}
+.popbtn a:nth-child(2){
+    background: red;
+}
+
+@media(max-width:1234px){
+    .vdes .right{
+        min-width: 291px;
+        width: 291px;
+    }
+    .div .slider img{height: 278px;}
+    .vdes .right h1{font-size: 23px;}
+    .vdes .right p{font-size: 16px;}
+    .vdes .right p i{font-size: 16px;}
+    .vdes .callbtn{font-size: 8px 0;font-size: 17px;}
+    .vdes .callbtn i{font-size: 16px;}
+    .vlink a{font-size: 16px;}
+    .vdes .left h1{font-size: 27px;}
+    .vdes .left p{font-size: 17px;}
+    .i h4:nth-child(1){font-size: 16px;}
+    .i h4:nth-child(2){font-size: 19px;}
+    .foot a{font-size: 17px;}
+}
+@media(max-width:1188px){
+    .vdes .right{
+        min-width: 287px;
+        width: 287px;
+    }
+    .i h4:nth-child(1){font-size: 15px;}
+    .i h4:nth-child(2){font-size: 18px;}
+    nav .left{margin-left: 12px;}
+    nav .left i{font-size: 21px;margin-right: 3px;}
+    nav .left a{font-size: 26px;}
+    form input{font-size: 16px;}
+    form button{min-width: 32px;min-height: 32px;font-size: 17px;}
+    nav .right a{font-size: 18px;margin: 3px 7px;}
+    .menu{min-width: 251px;}
+    .menu h3{font-size: 21px;}
+    .menu a i{font-size: 15px;}
+    .menu a p{font-size: 17px;}
+    .b p{font-size: 16px;}
+    .b select{font-size: 14px;}
+    .content{min-width: 319px;width: 319px;}
+    .preview img{height: 259px;}
+    .content h1{font-size: 28px;}
+    .content p{font-size: 17px;}
+    .des a{font-size: 17px;}
+    .des button{font-size: 15px;}
+}
+@media(max-width:1111px){
+    .menu{
+        position: fixed;
+        background: var(--back);
+        z-index: 2;
+        height: 100%;
+        top: 0;
+        left: -369px;
+        transition: 0.4s;
+    }
+    nav .menubtn{display: block;}
+    .menu span{display: block;}
+}
+@media(max-width:910px){
+    .vdes{flex-direction: column;}
+}
+@media(max-width:766px){
+    .div .slider img{height: 262px;}
+    nav .left{margin-left: 9px;}
+    nav .left i{font-size: 20px;margin-right: 2px;}
+    nav .left a{font-size: 25px;}
+    nav .right a{font-size: 17px;margin: 3px 5px;}
+    .content{min-width: 287px;width: 287px;}
+    .preview img{height: 232px;}
+    .content h1{font-size: 27px;}
+    .content p{font-size: 16px;}
+    .des a{font-size: 16px;}
+    .des button{font-size: 14px;}
+    .item{width: 93%;}
+}
+@media(max-width:691px){
+    .search{
+        position: fixed;
+        width: 100%;
+        height: 100px;
+        top: -369px;transition: 0.4s;
+        border-bottom: 1px solid #eee;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+    .li{flex-direction: column;border: 1px solid dimgray;border-radius: 5px;padding: 7px 0;}
+    .li .i{flex-direction: row;padding: 3px 0;background: none;}
+    .i h4:nth-child(1){margin-left: 14px;}
+    .i h4:nth-child(2){color: royalblue;}
+    .searchbtn{display: block;}
+    .search a{display: block;}
+    .b p{font-size: 4vw;}
+    .item{flex-direction: column;align-items: center;width: 91%;}
+    .preview img{height: 215px;}
+    .content{width: 98%;margin-top: 5px;}
+    .des{margin-top: 9px;margin-bottom: 3px;}
+    .box{margin: 5px auto;width: 92%;}
+    form{margin-left: 12px;}
+    .content h1{font-size: 24px;}
+    .content p{font-size: 17px;}
+    .foot a{font-size: 16px;}
+}
+@media(max-width:500px){
+    .div .slider img{height: 215px;}
+    .content .number{top: -6px;right: -6px;}
+    .preview img{height: 189px;}
+    .content h1{font-size: 5.1vw;}
+    .content p{font-size: 4.2vw;}
+    .totop{width: 59px;height: 59px;}
+    .totop i{font-size: 17px;}.totop p{font-size: 13px;}
+    .vdes .left h1{font-size: 24px;}
+    .vdes .left p{font-size: 16px;}
+    .i h4:nth-child(1){font-size: 14px;}
+    .i h4:nth-child(2){font-size: 17px;}
+    .vdes .right{
+        min-width: 93%;
+        width: 93%;
+    }
+    .foot{padding: 12px 0;}
+    .foot a{font-size: 14px;margin-left: 10px;}
+    .pop h1{font-size: 27px;}.pop h1 span{font-size: 15px;}
+    .popbtn a{font-size: 16px;padding: 8px 15px;}
+    .popbtn a i{font-size: 14px;}
+}

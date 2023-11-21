@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shar Mal | ရှာမယ်</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../home.css">
+    <meta name="description" content="Find jobs and hire worker in Shar Mal">
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <i class="fa-solid fa-bars menubtn"></i>
+            <div class="logo">
+                <h1>Shar Mal</h1>
+            </div>
+        </div>
+        <div class="right">
+            <div class="link">
+                <a href="jobs">Jobs</a>
+                <a href="">About Us</a>
+                <a href="">Contact Us</a>
+            </div>
+            <div class="tran">
+                <div id="google_translate_element"></div>
+            </div>
+            <a href="" class="hire">
+                <h3>Want to</h3>
+                <p>hire worker</p>
+            </a>
+            <div class="a">
+                <a href=""><i class="fa-solid fa-qrcode"></i></a>
+                <a href=""><i class="fa-solid fa-gear"></i></a>
+                <a href=""><i class="fa-solid fa-user"></i></a>
+            </div>
+        </div>
+    </nav>
+    <div class="head" id="search">
+        <div class="search">
+            <input type="text" value="<%=q%>" class="inp" placeholder="Search job">
+            <div class="select">
+                <select class="gender">
+                    <option value="all">Gender</option>
+                    <option value="both">Both</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <select class="region">
+                    <option value="all">Anywhere</option>
+                    <option value="muse">Muse</option>
+                    <option value="namkham">Nam Kham</option>
+                    <option value="ruili">Ruili</option>
+                    <option value="other">Others</option>
+                </select>
+            </div>
+            <i class="fa-solid fa-qrcode"></i>
+            <button onclick="search()">Search</button>
+        </div>
+    </div>
+    <div class="list">
+        <%all.forEach((item)=>{%>
+            <a href="../jobs/<%=item.jobid%>" class="item">
+                <div class="left">
+                    <h1><%=item.title%></h1>
+                    <p><i class="fa-solid fa-location-dot"></i><%=item.location%></p>
+                    <p><i class="fa-solid fa-user"></i><%=item.gender%></p>
+                    <p style="margin-bottom: 7px;"><%=item.number%> postion</p>
+                </div>
+                <div class="right">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </a>
+        <%})%>
+    </div>
+    <div class="foot">
+        <div class="l">
+            <h3>Jobs</h3>
+            <a href="">Office job</a>
+            <a href="">Carrier job</a>
+            <a href="">Service job</a>
+            <a href="">Translate job</a>
+        </div>
+        <div class="l">
+            <h3>Activity</h3>
+            <a href="#search">Search job</a>
+            <a href="">Scan post</a>
+            <a href="">hire worker</a>
+            <a href="">Contact Us</a>
+            <a href="">About Us</a>
+        </div>
+        <div class="contact">
+            <h1>Follow us on social media</h1>
+            <div class="social">
+                <a href=""><i class="fa-brands fa-weixin"></i></a>
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-facebook-messenger"></i></a>
+                <a href=""><i class="fa-brands fa-telegram"></i></a>
+                <a href=""><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <p>Make with ❤️ by <b>MMao Official</b></p>
+        </div>
+    </div>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        var inp = document.querySelector(".search input");
+        var gender = document.querySelector(".gender");
+        var region = document.querySelector(".region");
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+        function search(){
+            if(inp.value.length > 0){
+                window.location.href = 'search?q='+inp.value+'&gender='+gender.value+'&region='+region.value;
+            }
+        }
+    </script>
+</body>
+</html>

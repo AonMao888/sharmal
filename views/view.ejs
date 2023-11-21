@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs in Shar Mal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../job.css">
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <i class="fa-solid fa-angle-left" onclick="window.history.back()"></i>
+            <a href="">Shar Mal</a>
+        </div>
+        <div class="search">
+            <form action="" method="post">
+                <input name="q" required type="text" placeholder="Search job">
+                <i class="fa-solid fa-xmark clear"></i>
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <a href="javascript:csearch()">close</a>
+        </div>
+        <div class="right">
+            <a href="javascript:ssearch()" class="searchbtn"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a href="javascript:spop('localhost/jobs/<%=all[0].jobid%>')" title="Scan"><i class="fa-solid fa-qrcode"></i></a>
+            <a href="javascript:window.location.reload()" title="Reload"><i class="fa-solid fa-rotate-right"></i></a>
+            <a href="javascript:shar('<%=all[0].title%>','/jobs/<%=all[0].jobid%>')" title="Share"><i class="fa-solid fa-share"></i></a>
+            <a href="javascript:smenu()" class="menubtn"><i class="fa-solid fa-bars"></i></a>
+        </div>
+    </nav>
+    <div class="body">
+        <div class="menu">
+            <span onclick="cmenu()">close</span>
+            <h3>Category</h3>
+            <a href=""><p>Office</p><i class="fa-solid fa-angle-right"></i></a>
+            <a href=""><p>Translate</p><i class="fa-solid fa-angle-right"></i></a>
+            <a href=""><p>Carrier</p><i class="fa-solid fa-angle-right"></i></a>
+        </div>
+        <div class="home">
+            <div class="div">
+                <div class="slider">
+                    <img onerror="this.remove()" src="https://www.nichepursuits.com/wp-content/uploads/2023/03/online-jobs-that-pay-daily.png" alt="">
+                    <img onerror="this.remove()" src="https://fjwp.s3.amazonaws.com/blog/wp-content/uploads/2018/06/19061736/10-Companies-with-Legitimate-Work-from-Home-Jobs-1024x512.jpg" alt="">
+                    <img onerror="this.remove()" src="https://www.makingsenseofcents.com/wp-content/uploads/2019/09/organized_boss33-1024x684.jpg" alt="">
+                </div>
+                <div class="vdes">
+                    <div class="left">
+                        <h1><%=all[0].title%></h1>
+                        <p><%=all[0].des%></p>
+                        <p>Category : <b><%=all[0].category%></b></p>
+                        <p>Job ID : <b><%=all[0].jobid%></b></p>
+                        <div class="li">
+                            <div class="i"><h4>Salary</h4><h4><%=all[0].salary%>Ks/<%=all[0].per%></h4></div>
+                            <div class="i"><h4>Gender</h4><h4><%=all[0].gender%></h4></div>
+                            <div class="i"><h4>Numbers</h4><h4><%=all[0].number%> position</h4></div>
+                            <div class="i"><h4>Post date</h4><h4><%=all[0].postdate%></h4></div>
+                            <div class="i"><h4>Expired date</h4><h4><%=all[0].expiredate%></h4></div>
+                        </div>
+                        <p>Job location on maps</p>
+                        <div class="m" style="display: flex;align-items:center;margin:15px;user-select:none;">
+                            <a href="https://www.google.com/maps/place/<%=all[0].map%>" title="View on google map" style="margin-right: 12px;"><img width="60" height="50" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Google_Maps_Logo_2020.svg/512px-Google_Maps_Logo_2020.svg.png?20200329030310" alt=""></a>
+                            <a href="https://earth.google.com/web/search/<%=all[0].map%>" title="View on google earth" style="margin-left:12px;"><img width="45" height="45" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Google_Earth_icon.svg/1200px-Google_Earth_icon.svg.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <h1><a href="">Poster</a></h1>
+                        <p><i class="fa-solid fa-user"></i><%=all[0].poster%></p>
+                        <p><i class="fa-solid fa-location-dot"></i> <%=all[0].location%></p>
+                        <button class="callbtn"><i class="fa-solid fa-phone"></i>Call</button>
+                        <div class="vlink">
+                            <a href="">wechat</a>
+                            <a href="">facebook</a>
+                            <a href="">email</a>
+                            <a href="">facebook</a>
+                            <a href="">email</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="foot">
+                    <a href="">Call job owner</a>
+                    <a href="">Report</a>
+                    <a href="">Hire worker</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pop">
+        <h1>Share <span>via QR Code</span></h1>
+        <img src="" loading="lazy" alt="">
+        <div class="popbtn">
+            <a href=""><i class="fa-solid fa-cloud-arrow-down"></i>Download</a>
+            <a href="javascript:cpop()">Close</a>
+        </div>
+    </div>
+    <div class="totop" onclick="totop()"><i class="fa-solid fa-angle-up"></i><p>Top</p></div>
+    <script>
+        var clear = document.querySelector("form .clear");
+        var inp = document.querySelector("form input");
+        var menu = document.querySelector(".menu");
+        var search = document.querySelector(".search");
+        var totopdiv = document.querySelector(".totop");
+        inp.onkeyup=()=>{
+            if(inp.value.length > 0){
+                clear.style.display = 'block'
+            }else{
+                clear.style.display = 'none'
+            }
+        }
+        clear.onclick=()=>{inp.value='';clear.style.display='none'}
+        function smenu(){menu.style.left='0'}
+        function cmenu(){menu.style.left='-369px'}
+        function ssearch(){search.style.top=0}
+        function csearch(){search.style.top='-369px'}
+        function totop(){window.scrollTo({top:0,behavior:"smooth"})}
+        window.onscroll=function(){
+            if(document.body.scrollTop>242 || document.documentElement.scrollTop>242){
+                totopdiv.style.bottom = '15px'
+            }else{
+                totopdiv.style.bottom = '-369px'
+            }
+        }
+        function shar(title,link){
+            if(link){
+                navigator.share({title:title,url:link})
+            }else{
+                navigator.share({title:'Find jobs online easily in Shar Mal',url:window.location.href})
+            }
+        }
+        function cpop(){document.querySelector(".pop").style.top='100vh'}
+        function spop(link){
+            document.querySelector(".pop").style.top='0';
+            document.querySelector(".pop img").src = 'https://maoapi.vercel.app/qrcode?text=' + link
+        }
+    </script>
+</body>
+</html>

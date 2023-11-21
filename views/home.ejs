@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shar Mal | ရှာမယ်</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="home.css">
+    <meta name="description" content="Find jobs and hire worker in Shar Mal">
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <i class="fa-solid fa-bars menubtn"></i>
+            <div class="logo">
+                <h1>Shar Mal</h1>
+            </div>
+        </div>
+        <div class="right">
+            <div class="link">
+                <a href="jobs">Jobs</a>
+                <a href="">About Us</a>
+                <a href="">Contact Us</a>
+            </div>
+            <div class="tran">
+                <div id="google_translate_element"></div>
+            </div>
+            <a href="" class="hire">
+                <h3>Want to</h3>
+                <p>hire worker</p>
+            </a>
+            <div class="a">
+                <a href=""><i class="fa-solid fa-qrcode"></i></a>
+                <a href=""><i class="fa-solid fa-gear"></i></a>
+                <a href=""><i class="fa-solid fa-user"></i></a>
+            </div>
+        </div>
+    </nav>
+    <div class="head" id="search">
+        <div class="search">
+            <input type="text" class="inp" placeholder="Search job">
+            <div class="select">
+                <select class="gender">
+                    <option value="all">Gender</option>
+                    <option value="both">Both</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <select class="region">
+                    <option value="all">Anywhere</option>
+                    <option value="muse">Muse</option>
+                    <option value="namkham">Nam Kham</option>
+                    <option value="ruili">Ruili</option>
+                    <option value="other">Others</option>
+                </select>
+            </div>
+            <i class="fa-solid fa-qrcode"></i>
+            <button onclick="search()">Search</button>
+        </div>
+    </div>
+    <div class="topic">
+        <div class="item">
+            <i class="fa-solid fa-users-viewfinder"></i>
+            <h1>Hire Talent</h1>
+            <p>Discover worker for your job</p>
+        </div>
+        <div class="item">
+            <i class="fa-solid fa-magnifying-glass-dollar"></i>
+            <h1>Find Job</h1>
+            <p>Discover Jobs to work</p>
+        </div>
+        <div class="item">
+            <i class="fa-solid fa-wind"></i>
+            <h1>Quick</h1>
+            <p>Get job quickly online</p>
+        </div>
+    </div>
+    <div class="msg">
+        <div class="left">
+            <img class="logo" src="tlogo" alt="">
+            <img src="chatpng" class="chat" alt="">
+            <img src="speaker" class="speaker" alt="">
+        </div>
+        <div class="content">
+            <h1>Join Telegram</h1>
+            <p>Daily posts will always be posted on the <b>Telegram Channel</b>, so anyone can easily join the channel. Press button below to join channel.</p>
+            <a href="">Join channel</a>
+        </div>
+    </div>
+    <div class="foot">
+        <div class="l">
+            <h3>Jobs</h3>
+            <a href="">Office job</a>
+            <a href="">Carrier job</a>
+            <a href="">Service job</a>
+            <a href="">Translate job</a>
+        </div>
+        <div class="l">
+            <h3>Activity</h3>
+            <a href="#search">Search job</a>
+            <a href="">Scan post</a>
+            <a href="">hire worker</a>
+            <a href="">Contact Us</a>
+            <a href="">About Us</a>
+        </div>
+        <div class="contact">
+            <h1>Follow us on social media</h1>
+            <div class="social">
+                <a href=""><i class="fa-brands fa-weixin"></i></a>
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-facebook-messenger"></i></a>
+                <a href=""><i class="fa-brands fa-telegram"></i></a>
+                <a href=""><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <p>Make with ❤️ by <b>MMao Official</b></p>
+        </div>
+    </div>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        var inp = document.querySelector(".search input");
+        var gender = document.querySelector(".gender");
+        var region = document.querySelector(".region");
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+        function search(){
+            if(inp.value.length > 0){
+                window.location.href = 'search?q='+inp.value+'&gender='+gender.value+'&region='+region.value;
+            }
+        }
+    </script>
+</body>
+</html>
